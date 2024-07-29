@@ -6,9 +6,7 @@ import { Apikey, apikeySchema } from './entities/apikey.entity';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([
-      { name: Apikey.name, schema: apikeySchema },
-    ]),
+    MongooseModule.forFeature([{ name: Apikey.name, schema: apikeySchema }]),
   ],
   controllers: [ApikeyController],
   providers: [ApikeyService],

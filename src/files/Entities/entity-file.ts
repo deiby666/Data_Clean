@@ -5,16 +5,14 @@ export type FileUploadDocument = FileUpload & Document;
 
 @Schema({ timestamps: true })
 export class FileUpload {
+  @Prop({ required: true })
+  ip: string;
 
   @Prop({ required: true })
-  ip: string; 
+  originalName: string;
 
   @Prop({ required: true })
-  originalName: string; 
-
-  @Prop({ required: true })
-  file: string; 
-
+  file: string;
 }
 
 export const FileUploadSchema = SchemaFactory.createForClass(FileUpload);
