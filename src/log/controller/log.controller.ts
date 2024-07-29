@@ -5,8 +5,8 @@ import {
   ApiQuery,
   ApiParam,
   ApiHeader,
+  ApiResponse,
 } from '@nestjs/swagger';
-import { ApiTags, ApiOperation, ApiQuery, ApiParam, ApiResponse } from '@nestjs/swagger';
 import { LogService } from '../service/log.service';
 
 @ApiTags('logs')
