@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ApikeyModule } from './apikey/apikey.module';
+import { FilesModule } from './files/files.module';
+
 
 @Module({
-  imports: [ApikeyModule],
+  imports: [FilesModule],
   controllers: [],
   providers: [],
 })
