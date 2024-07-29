@@ -1,5 +1,11 @@
 import { Controller, Get, Query, Delete, Param } from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiQuery, ApiParam } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiQuery,
+  ApiParam,
+  ApiHeader,
+} from '@nestjs/swagger';
 import { LogService } from '../service/log.service';
 
 @ApiTags('logs')
@@ -8,6 +14,10 @@ export class LogsController {
   constructor(private readonly logService: LogService) {}
 
   @Get('all')
+  @ApiHeader({
+    name: 'x-api-key',
+    description: 'API key needed to access this endpoint',
+  })
   @ApiOperation({ summary: 'Get all logs with pagination and sorting' })
   @ApiQuery({ name: 'page', required: false, type: Number, example: 1 })
   @ApiQuery({ name: 'limit', required: false, type: Number, example: 10 })
@@ -26,6 +36,10 @@ export class LogsController {
   }
 
   @Delete(':id')
+  @ApiHeader({
+    name: 'x-api-key',
+    description: 'API key needed to access this endpoint',
+  })
   @ApiOperation({ summary: 'Delete a log by ID' })
   @ApiParam({ name: 'id', required: true, type: String })
   async deleteLog(@Param('id') logId: string): Promise<{ message: string }> {
