@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
+import { LogService } from './log/service/log.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { LogService } from './service/log.service';
 import { Log, LogSchema } from './entities/log.entity';
 import { LogsController } from './controller/log.controller';
 
