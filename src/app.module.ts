@@ -17,7 +17,6 @@ import { ApiKeyGuard } from './libs/guards/api-key.guard';
     PersistenceModule,
     FilesModule,
     LogModule,
-    LogModule,
   ],
   controllers: [],
   providers: [
