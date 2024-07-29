@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { ApikeyService } from './apikey.service';
-import { ApikeyController } from './apikey.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Apikey, apikeySchema } from './entities/apikey.entity';
 
@@ -8,7 +6,7 @@ import { Apikey, apikeySchema } from './entities/apikey.entity';
   imports: [
     MongooseModule.forFeature([{ name: Apikey.name, schema: apikeySchema }]),
   ],
-  controllers: [ApikeyController],
-  providers: [ApikeyService],
+  controllers: [],
+  providers: [],
 })
 export class ApikeyModule {}
