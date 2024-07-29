@@ -1,4 +1,11 @@
 import { Controller, Get, Query, Delete, Param } from '@nestjs/common';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiQuery,
+  ApiParam,
+  ApiHeader,
+} from '@nestjs/swagger';
 import { ApiTags, ApiOperation, ApiQuery, ApiParam, ApiResponse } from '@nestjs/swagger';
 import { LogService } from '../service/log.service';
 
@@ -8,6 +15,10 @@ export class LogsController {
   constructor(private readonly logService: LogService) {}
 
   @Get('all')
+  @ApiHeader({
+    name: 'x-api-key',
+    description: 'API key needed to access this endpoint',
+  })
   @ApiOperation({ summary: 'Get all logs with pagination and sorting' })
   @ApiResponse({ status: 200, description: 'success' })
   @ApiResponse({ status: 400, description: 'Invalid request' })
@@ -30,6 +41,10 @@ export class LogsController {
   }
 
   @Delete(':id')
+  @ApiHeader({
+    name: 'x-api-key',
+    description: 'API key needed to access this endpoint',
+  })
   @ApiOperation({ summary: 'Delete a log by ID' })
   @ApiResponse({ status: 200, description: 'API Key is valid' })
   @ApiResponse({ status: 400, description: 'Invalid request' })

@@ -4,8 +4,6 @@ import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const PORT = process.env.PORT;
-
   const app = await NestFactory.create(AppModule, { cors: true });
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
@@ -21,6 +19,7 @@ async function bootstrap() {
 const document = SwaggerModule.createDocument(app, config);
 SwaggerModule.setup('api-doc', app, document);
 
+  await app.listen(PORT);
   await app.listen(PORT);
   console.log(`App listening in port: ${PORT}`);
   console.log(`Swagger in: http://localhost:${PORT}/api-doc`);

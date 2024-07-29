@@ -26,7 +26,6 @@ export class CreateFileUploadDto {
   @IsOptional()
   @IsNotEmpty({ message: 'orderBy should not be empty if provided' })
   orderBy?: string;
-  /* ordena los archivos segun los campos, ej: edad, nombre, apellido */
 
   @IsEnum(OrderDirection)
   @IsOptional()
