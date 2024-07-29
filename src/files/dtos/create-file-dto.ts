@@ -16,6 +16,7 @@ export class CreateFileUploadDto {
   @IsString()
   @IsOptional()
   ip?: string;
+  ip?: string;
 
   @IsString()
   @IsNotEmpty()
@@ -25,6 +26,7 @@ export class CreateFileUploadDto {
   @IsOptional()
   @IsNotEmpty({ message: 'orderBy should not be empty if provided' })
   orderBy?: string;
+  orderBy?: string;
   /* ordena los archivos segun los campos, ej: edad, nombre, apellido */
 
   @IsEnum(OrderDirection)
@@ -33,12 +35,18 @@ export class CreateFileUploadDto {
     message: 'Order direction must be "asc" or "desc"',
   })
   order?: OrderDirection;
+  @IsIn([OrderDirection.ASC, OrderDirection.DESC], {
+    message: 'Order direction must be "asc" or "desc"',
+  })
+  order?: OrderDirection;
 
   @IsBoolean()
   @IsOptional()
   removeDuplicates?: boolean;
+  removeDuplicates?: boolean;
 
   @IsBoolean()
   @IsOptional()
+  strictValidation?: boolean;
   strictValidation?: boolean;
 }

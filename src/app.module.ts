@@ -16,6 +16,7 @@ import { LogIterceptor } from './log/Interceptor/log.interceptor';
     PersistenceModule,
     FilesModule,
     LogModule,
+    LogModule,
   ],
   controllers: [],
   providers: [
