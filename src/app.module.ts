@@ -4,7 +4,6 @@ import { LogModule } from './log/log.module';
 import { ConfigModule } from '@nestjs/config';
 import dbConfig from './libs/persistence/db-config';
 import { PersistenceModule } from './libs/persistence';
-import { LogModule } from './log/log.module';
 
 @Module({
   imports: [
