@@ -1,5 +1,12 @@
+# Data Clean 
+
+<p>
+  Data Clean is an API that converts files primarily from .csv format to .txt. It should be noted that it is not only based on any file converter but also has specific validations regarding the data, with options that the user can activate to eliminate unwanted records or even to modify files within the files for reasons of convention. or unwanted repeated fields; This API has logs that manage a record throughout the application to manage requests and a history.
+</p>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="https://aws.amazon.com/es/s3/" target="blank"><img src="https://logowik.com/content/uploads/images/amazon-s35310.jpg" width="250" alt="AWS S3 Logo" /></a>
 </p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
@@ -57,6 +64,39 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Documentation
+
+<p>
+This APP has good documentation and is well grouped. Swagger is used for the code and the documentation for the entire project is found in confluence.
+</p>
+
+<p align="center">
+  <a href="https://cardonadeiby88.atlassian.net/wiki/x/RQHS" target="blank"><img src="https://play-lh.googleusercontent.com/ioJTF4OMDt2-x3Mnz_LEIHpoGjig_g7nfECiKsaFlvasBeo0myuKqnc6XHoItyL3OSE" width="200" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://store-images.s-microsoft.com/image/apps.7736.f1e439b9-777e-47dd-b695-f05d19eb7b38.8ee3e6f6-c400-4919-811d-59b0cd18fa41.e5bd6ef7-31e5-4ca5-a5c6-79be979af666.png" width="200" alt="Architecture diagram" /></a>
+</p>
+
+# Diagrams
+
+<p>This is UML diagram</p>
+  <p align="center">
+  <a href="https://cardonadeiby88.atlassian.net/wiki/x/RQHS" target="blank"><img src="./img/uml.png" width="500" alt="Nest Logo" /></a>
+</p>
+<p>This is architecture diagram</p>
+  <p align="center">
+  <a href="https://cardonadeiby88.atlassian.net/wiki/x/RQHS" target="blank"><img src="./img/flujo_uno.PNG" width="500" alt="Nest Logo" /></a>
+</p>
+
+# Architecture pattern
+
+The architectural pattern that was used was planned by the entire team according to the understanding of the HU, an easy and fluid way was chosen, the option to use AWS S3 was taken by the development team due to previous experiences in other projects and by the documentation and usefulness of each of the two tools.
+
+## development team
+
+- <a href="https://github.com/AXrodriguezQ" target="blank">AXrodriguezQ</a>
+- <a href="https://github.com/cristianManco" target="blank">AXrodriguezQ</a>
+- <a href="https://github.com/deiby666" target="blank">deiby666</a>
+- <a href="https://github.com/holas1356" target="blank">holas1356</a>
 
 ## Support
 
