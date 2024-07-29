@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
 import { ApikeyService } from './apikey.service';
 import { CreateApikeyDto } from './dto/create-apikey.dto';
 
@@ -10,5 +10,4 @@ export class ApikeyController {
   create(@Body() createApikeyDto: CreateApikeyDto) {
     return this.apikeyService.create(createApikeyDto);
   }
-
 }

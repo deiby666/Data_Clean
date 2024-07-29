@@ -6,6 +6,4 @@ export class ApikeyService {
   create(createApikeyDto: CreateApikeyDto) {
     return createApikeyDto;
   }
-
- 
 }
