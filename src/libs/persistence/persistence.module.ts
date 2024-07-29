@@ -1,5 +1,5 @@
-import { Global, Module } from '@nestjs/common';
 import { ConfigType } from '@nestjs/config';
+import { Global, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import dbConfig from './db-config';
 
@@ -7,7 +7,7 @@ import dbConfig from './db-config';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
-      useFactory: (configService: ConfigType<typeof dbConfig>) => {
+      useFactory: (configService: ConfigType <typeof dbConfig>) => {
         const { db, env } = configService;
         const uriDb =
           env === 'local'
