@@ -1,10 +1,9 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-@Schema({timestamps: true})
+@Schema({ timestamps: true })
 export class Apikey {
-    
-    @Prop({ required:true })
-    apikey: string;
+  @Prop({ required: true })
+  apikey: string;
 }
 
 export const apikeySchema = SchemaFactory.createForClass(Apikey);

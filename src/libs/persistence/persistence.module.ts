@@ -7,7 +7,7 @@ import dbConfig from './db-config';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
-      useFactory: (configService: ConfigType <typeof dbConfig>) => {
+      useFactory: (configService: ConfigType<typeof dbConfig>) => {
         const { db, env } = configService;
         const uriDb =
           env === 'local'

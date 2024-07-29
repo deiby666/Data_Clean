@@ -5,7 +5,6 @@ import { ConfigModule } from '@nestjs/config';
 import dbConfig from './libs/persistence/db-config';
 import { PersistenceModule } from './libs/persistence';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -15,7 +14,7 @@ import { PersistenceModule } from './libs/persistence';
     }),
     PersistenceModule,
     FilesModule,
-    LogModule
+    LogModule,
   ],
   controllers: [],
   providers: [],
