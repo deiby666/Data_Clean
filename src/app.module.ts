@@ -4,8 +4,9 @@ import { LogModule } from './log/log.module';
 import { ConfigModule } from '@nestjs/config';
 import dbConfig from './libs/persistence/db-config';
 import { PersistenceModule } from './libs/persistence';
-import { APP_INTERCEPTOR } from '@nestjs/core';
+import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { LogIterceptor } from './log/Interceptor/log.interceptor';
+import { ApiKeyGuard } from './libs/guards/api-key.guard';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -23,6 +24,10 @@ import { LogIterceptor } from './log/Interceptor/log.interceptor';
     {
       provide: APP_INTERCEPTOR,
       useClass: LogIterceptor,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: ApiKeyGuard,
     },
   ],
 })
