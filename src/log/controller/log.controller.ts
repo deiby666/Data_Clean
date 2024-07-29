@@ -5,6 +5,7 @@ import {
   ApiQuery,
   ApiParam,
   ApiHeader,
+  ApiResponse,
 } from '@nestjs/swagger';
 import { LogService } from '../service/log.service';
 
@@ -19,6 +20,10 @@ export class LogsController {
     description: 'API key needed to access this endpoint',
   })
   @ApiOperation({ summary: 'Get all logs with pagination and sorting' })
+  @ApiResponse({ status: 200, description: 'success' })
+  @ApiResponse({ status: 400, description: 'Invalid request' })
+  @ApiResponse({ status: 403, description: 'Forbidden' })
+  @ApiResponse({ status: 404, description: 'Not found' })
   @ApiQuery({ name: 'page', required: false, type: Number, example: 1 })
   @ApiQuery({ name: 'limit', required: false, type: Number, example: 10 })
   @ApiQuery({
@@ -41,6 +46,10 @@ export class LogsController {
     description: 'API key needed to access this endpoint',
   })
   @ApiOperation({ summary: 'Delete a log by ID' })
+  @ApiResponse({ status: 200, description: 'API Key is valid' })
+  @ApiResponse({ status: 400, description: 'Invalid request' })
+  @ApiResponse({ status: 403, description: 'Forbidden' })
+  @ApiResponse({ status: 404, description: 'Not found' })
   @ApiParam({ name: 'id', required: true, type: String })
   async deleteLog(@Param('id') logId: string): Promise<{ message: string }> {
     await this.logService.deleteLog(logId);

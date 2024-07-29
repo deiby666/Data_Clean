@@ -11,9 +11,9 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Riwi Centinela')
+    .setTitle('Data clean')
     .setDescription(
-      'API for managing authentication in Riwi training center projects',
+      'The Data Clean - Van Rossum project is designed to address the needs of organizations requiring efficient and reliable management of information. Our API facilitates the preparation and sanitization of files to ensure data integrity and usability. The core functionalities of this API are geared towards handling plain text files and providing users with robust tools to manage data before exporting it in various formats such as txt file',
     )
     .setVersion('1.0')
     .addBearerAuth()
