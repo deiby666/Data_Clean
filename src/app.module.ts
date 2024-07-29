@@ -4,7 +4,8 @@ import { LogModule } from './log/log.module';
 import { ConfigModule } from '@nestjs/config';
 import dbConfig from './libs/persistence/db-config';
 import { PersistenceModule } from './libs/persistence';
-
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { LogIterceptor } from './log/Interceptor/log.interceptor';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -15,8 +16,14 @@ import { PersistenceModule } from './libs/persistence';
     PersistenceModule,
     FilesModule,
     LogModule,
+    LogModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LogIterceptor,
+    },
+  ],
 })
 export class AppModule {}
