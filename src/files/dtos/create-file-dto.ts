@@ -1,5 +1,11 @@
-import { IsString, IsOptional, IsEnum, IsBoolean, IsIn, IsNotEmpty, IsArray, IsObject } from 'class-validator';
-
+import {
+  IsString,
+  IsOptional,
+  IsEnum,
+  IsBoolean,
+  IsIn,
+  IsNotEmpty
+} from 'class-validator';
 
 export enum OrderDirection {
   ASC = 'asc',
@@ -9,7 +15,7 @@ export enum OrderDirection {
 export class CreateFileUploadDto {
   @IsString()
   @IsOptional()
-  ip?: string; 
+  ip?: string;
 
   @IsString()
   @IsNotEmpty()
@@ -18,19 +24,21 @@ export class CreateFileUploadDto {
   @IsString()
   @IsOptional()
   @IsNotEmpty({ message: 'orderBy should not be empty if provided' })
-  orderBy?: string; 
+  orderBy?: string;
   /* ordena los archivos segun los campos, ej: edad, nombre, apellido */
 
   @IsEnum(OrderDirection)
   @IsOptional()
-  @IsIn([OrderDirection.ASC, OrderDirection.DESC], { message: 'Order direction must be "asc" or "desc"' })
-  order?: OrderDirection; 
+  @IsIn([OrderDirection.ASC, OrderDirection.DESC], {
+    message: 'Order direction must be "asc" or "desc"',
+  })
+  order?: OrderDirection;
 
   @IsBoolean()
   @IsOptional()
-  removeDuplicates?: boolean; 
+  removeDuplicates?: boolean;
 
   @IsBoolean()
   @IsOptional()
-  strictValidation?: boolean; 
+  strictValidation?: boolean;
 }
