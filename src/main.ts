@@ -7,15 +7,13 @@ async function bootstrap() {
   const PORT = process.env.PORT;
 
   const app = await NestFactory.create(AppModule, { cors: true });
-  await app.listen(PORT);
-  
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-  .setTitle('Riwi Centinela')
+  .setTitle('Data clean')
   .setDescription(
-    'API for managing authentication in Riwi training center projects',
+    'The Data Clean - Van Rossum project is designed to address the needs of organizations requiring efficient and reliable management of information. Our API facilitates the preparation and sanitization of files to ensure data integrity and usability. The core functionalities of this API are geared towards handling plain text files and providing users with robust tools to manage data before exporting it in various formats such as txt file',
   )
   .setVersion('1.0')
   .addBearerAuth()
@@ -23,7 +21,11 @@ async function bootstrap() {
 const document = SwaggerModule.createDocument(app, config);
 SwaggerModule.setup('api-doc', app, document);
 
+  await app.listen(PORT);
   console.log(`App listening in port: ${PORT}`);
   console.log(`Swagger in: http://localhost:${PORT}/api-doc`);
+
 }
+
+
 bootstrap();
