@@ -9,13 +9,13 @@ export class FileUpload {
   ip: string;
 
   @Prop({ required: true })
-  originalNameCsv: string; 
+  originalNameCsv: string;
 
   @Prop({ required: true })
-  csvFile: Buffer; 
+  csvFile: Buffer;
 
   @Prop({ required: true })
-  txtFileUrl: string; 
+  txtFileUrl: string;
 }
 
 export const FileUploadSchema = SchemaFactory.createForClass(FileUpload);
