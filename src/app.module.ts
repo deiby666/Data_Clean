@@ -25,10 +25,10 @@ import { ApiKeyGuard } from './libs/guards/api-key.guard';
       provide: APP_INTERCEPTOR,
       useClass: LogIterceptor,
     },
-    {
+    /* {
       provide: APP_GUARD,
       useClass: ApiKeyGuard,
-    },
+    }, */
   ],
 })
 export class AppModule {}
